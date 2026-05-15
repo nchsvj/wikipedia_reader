@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'ui/feature_name/widgets/articlePage_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'ui/article_view/widgets/articlePage_screen.dart';
+import 'ui/article_view/cubit/article_cubit.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,7 +14,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp( 
       debugShowCheckedModeBanner: false,
-      home: ArticlePageScreen(),
+      home: BlocProvider(
+        create: (context) => ArticleCubit(),
+        child: ArticlePageScreen(),
+      ),
     );
   }
 }
