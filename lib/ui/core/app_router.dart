@@ -12,7 +12,7 @@ class AppRouter {
   static Map<String, WidgetBuilder> get routes => {
     home: (context) => const MainMenu(),
     random: (context) => BlocProvider(
-      create: (context) => ArticleCubit()..updateArticle(), 
+      create: (context) => ArticleCubit(), 
       child: const ArticlePageScreen()
     ),
   };
