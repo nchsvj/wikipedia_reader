@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:wikipedia_reader/ui/main_menu/main_menu.dart';
+import 'package:wikipedia_reader/ui/article_view/widgets/articlePage_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wikipedia_reader/ui/article_view/cubit/article_cubit.dart';
+
+
+class AppRouter {
+  static final String home = '/home';
+  static final String random = '/random';
+
+  static Map<String, WidgetBuilder> get routes => {
+    home: (context) => const MainMenu(),
+    random: (context) => BlocProvider(
+      create: (context) => ArticleCubit()..updateArticle(), 
+      child: const ArticlePageScreen()
+    ),
+  };
+}

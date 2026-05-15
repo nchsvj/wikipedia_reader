@@ -4,7 +4,7 @@ import 'article_page.dart';
 import '../cubit/article_cubit.dart';
 
 class ArticlePageScreen extends StatelessWidget {
-  ArticlePageScreen({super.key});
+  const ArticlePageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
